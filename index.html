@@ -1,1 +1,25 @@
-55555555555
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استخراج الرقم من URL</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // الحصول على الرقم من URL
+            const query = window.location.search; // يأخذ النص بعد علامة السؤال
+            if (query.startsWith("?")) {
+                const number = query.substring(1); // إزالة علامة السؤال
+                document.getElementById("output").textContent = number; // طباعة الرقم في الصفحة
+            } else {
+                document.getElementById("output").textContent = "لا يوجد رقم في الرابط!";
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>الرقم من URL:</h1>
+    <p id="output"></p>
+</body>
+</html>
+
