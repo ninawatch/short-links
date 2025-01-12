@@ -1,25 +1,126 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>استخراج الرقم من URL</title>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // الحصول على الرقم من URL
-            const query = window.location.search; // يأخذ النص بعد علامة السؤال
-            if (query.startsWith("?")) {
-                const number = query.substring(1); // إزالة علامة السؤال
-                document.getElementById("output").textContent = number; // طباعة الرقم في الصفحة
-            } else {
-                document.getElementById("output").textContent = "لا يوجد رقم في الرابط!";
-            }
-        });
-    </script>
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #081828, #1e2a47);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #081828;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        header .home-button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .shortener-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .shortener-container input {
+            width: calc(100% - 50px);
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .shortener-container button {
+            background: #1e90ff;
+            border: none;
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .shortener-container button:hover {
+            background: #007acc;
+        }
+
+        footer {
+            background-color: #081828;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>الرقم من URL:</h1>
-    <p id="output"></p>
+    <header>
+        <h1>URL Shortener</h1>
+        <button class="home-button" title="Home">
+            <i class="fas fa-home"></i>
+        </button>
+    </header>
+    <main>
+        <div class="shortener-container">
+            <h2>Shorten Your Link</h2>
+            <input type="url" placeholder="Paste your link here" id="urlInput">
+            <button onclick="shortenUrl()">Shorten</button>
+            <p id="shortenedUrl" style="margin-top: 20px; font-weight: bold;"></p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 URL Shortener. Designed with <i class="fas fa-heart"></i> by <a href="#">Your Name</a>.</p>
+    </footer>
+
+    <script>
+        function shortenUrl() {
+            const urlInput = document.getElementById('urlInput').value;
+            const shortenedUrl = `https://short.url/${btoa(urlInput).slice(0, 6)}`;
+            document.getElementById('shortenedUrl').innerText = shortenedUrl;
+        }
+    </script>
 </body>
 </html>
-
