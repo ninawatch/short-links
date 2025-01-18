@@ -34,5 +34,11 @@
     "url": "/tvsmart_p2c_proxy.php?url=https://lb2.pluscdn.pl/ch/1445662/7/dash/0c3f3109/live.mpd",
     "date": "2025-01-17",
     "time": "01:39:19"
+  },
+  {
+    "ref": "MC41ND",
+    "url": "https://azrotv.com/extras/shaka-player/?id=https%3A%2F%2Flive-d-01-todtv-da.akamaized.net%2Fvariant%2Fv1blackout%2Fspo-hd-09-d%2FDASH_DASH%2FLive%2Fchannel(spo-hd-09)%2Fmanifest.mpd%3Fvcfilter%3De9e2b1ed-e86d-4acf-ab6e-e90e45036101%26hdnts%3Dst%3D1737212365~exp%3D1737226765~acl%3D%2Fvariant%2Fv1blackout%2Fspo-hd-09-d%2F*~id%3D153916ea-9ba7-4b04-8c2c-9c246fb5198e~data%3D6781edd7-5e05-4f57-befb-6971bfba9acf~hmac%3D377d54171e0df657563fa7f2cf00472c8aa12dbbcfe7e38c1c17a00a96f54d1c%26hdcore%3D2.11.3%7CdrmScheme%3Dclearkey%26drmLicense%3D0a7934dddc3136a6922584b96c3fd1e5%3A676e6d1dd00bfbe266003efaf0e3aa02",
+    "date": "2025-01-18",
+    "time": "16:02:38"
   }
 ]
